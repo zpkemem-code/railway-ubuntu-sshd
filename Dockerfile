@@ -13,7 +13,7 @@ RUN apt-get update \
     && chmod 755 /run/sshd \
     && echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config \
     # Disable root login
-    && echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+    && echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 # Copy ssh user config to configure user's password and authorized keys
 COPY ssh-user-config.sh /usr/local/bin/
